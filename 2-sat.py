@@ -4,7 +4,7 @@ import math
 import random
 
 # Inputs: a set of CNF (conjuctive normal form) clauses using n=3 variables with 2 variables per clause
-# Outputs: a solution (if exists), which is an assignemnt for the truth variables that satisfies all the given CNF clauses
+# Outputs: a solution (if it exists), which is an assignemnt for the truth variables that satisfies all the given CNF clauses
 
 n_variables = 3  # 3 Boolean variables: x1, x2, x3
 k_clauses = 5  # 5 clauses
