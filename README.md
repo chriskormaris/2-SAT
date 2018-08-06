@@ -10,4 +10,4 @@ Note that the algorithm is guaranteed to find a solution, if it exists, in:
 **(n_variables ^ 2) * (1 + 4 * math.sqrt(2/3)) = (3 ^ 2) * (1 + 4 * math.sqrt(2/3)) ~= 38** iterations.
 
 
-**See Sheldon Ross: Introduction to Probability Models, page 242**
+**See *Sheldon Ross: Introduction to Probability Models* book, page 242**
