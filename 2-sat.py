@@ -13,7 +13,7 @@ num_variables_per_clause = 2  # 2: hence the name 2-sat
 # _: denotes not
 variables_dict = {'x1': True, '_x1': False, 'x2': True, '_x2': False, 'x3': True, '_x3': False}
 
-# A: set of satisfiable assignment of truth variables: x1 = True, x2 = False, x3 = False
+# A, a set of satisfiable assignment of truth variables: x1 = True, x2 = False, x3 = False
 A = {'x1': True, 'x2': False, 'x3': False}
 
 # CNF clause example: (x1 + x2') * (x1 + x3) * (x2 + x3') * (x1' + x2') * (x1 + x2)
