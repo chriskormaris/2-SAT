@@ -1,4 +1,4 @@
-# 2-SAT
+# 2SAT
 An algorithm that given a set of CNF (conjuctive normal form) clauses using n=3 variables with 2 variables per clause (2-Satisfiability), outputs a solution (if it exists), which is an assignment for the truth variables that satisfies all the given CNF clauses. Written in Python.
 
 *CNF clause example: (x1 + x2') * (x1 + x3) * (x2 + x3') * (x1' + x2') * (x1 + x2)*
