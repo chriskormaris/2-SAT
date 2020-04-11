@@ -7,7 +7,7 @@ An algorithm that given a set of CNF (conjuctive normal form) clauses using n=3 
 
 Note that the algorithm is guaranteed to find a solution, if it exists, in:
 
-**(n_variables<sup>2</sup>) * (1 + 4 * sqrt({2 \over 3})) = (3<sup>2</sup>) * (1 + 4 * sqrt({2 \over 3})) ~= 38** iterations.
+**n_variables<sup>2</sup> * (1 + 4 * sqrt(2 / 3)) = 3<sup>2</sup> * (1 + 4 * sqrt(2 / 3)) ~= 38** iterations.
 
 
 **See *Sheldon Ross: Introduction to Probability Models* book, page 242**
