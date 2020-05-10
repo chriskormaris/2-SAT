@@ -3,7 +3,7 @@ An algorithm that given a set of CNF (conjuctive normal form) clauses using n=3 
 
 *CNF clause example: (x1 + x2') * (x1 + x3) * (x2 + x3') * (x1' + x2') * (x1 + x2)*
 
-*A, a set of satisfiable assignment of truth variables for the given CNF clause: x1 = True, x2 = False, x3 = False*
+*A: a set of satisfiable assignment of truth variables for the given CNF clause: x1 = True, x2 = False, x3 = False*
 
 Note that the algorithm is guaranteed to find a solution, if it exists, in:
 
