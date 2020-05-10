@@ -10,6 +10,6 @@ Note that the algorithm is guaranteed to find a solution, if it exists, in:
 **n_variables<sup>2</sup> * (1 + 4 * sqrt(2 / 3)) = 3<sup>2</sup> * (1 + 4 * sqrt(2 / 3)) ~= 38** iterations.
 
 
-**See *Sheldon Ross: Introduction to Probability Models* book, page 241**
+**See *Introduction to Probability Models, 10th Edition, Sheldon Ross* book, page 241**
 
 https://www.academia.edu/7013149/Introduction_to_Probability_Models_-_Sheldon_M-1._Ross
