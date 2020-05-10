@@ -41,7 +41,7 @@ print('')
 diffkeys = None
 not_true_clause_found = True
 stages = 0
-max_stages = (n ^ 2) * (1 + 4 * math.sqrt(2/3))
+max_stages = math.pow(n, 2) * (1 + 4 * math.sqrt(float(2) / 3))
 while not_true_clause_found and stages <= int(math.ceil(max_stages)):
 
     not_true_clause_found = False
@@ -89,7 +89,7 @@ while not_true_clause_found and stages <= int(math.ceil(max_stages)):
 
 
 print('stages done: ' + str(stages))
-print('max stages = ceil[(n ^ 2) * (1 + 4 * sqrt(2/3))] = ' + ' ceil[' + str(max_stages) + ']' + ' = ' + str(math.ceil(max_stages)))
+print('max stages = ceil[(n ^ 2) * (1 + 4 * sqrt(2/3))] = ' + ' ceil[' + str(max_stages) + ']' + ' = ' + str(int(math.ceil(max_stages))))
 print('final variable assignment of truth variables: ' + str(variable_assignment))
 print('a satisfiable assignment of truth variables A: ' + str(A))
 print('Y: ' + str(Y))
