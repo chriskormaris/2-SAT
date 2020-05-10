@@ -5,7 +5,7 @@ This is an algorithm that given a Boolean formula with n=3 variables overall and
 
 -A Boolean formula is a combination of CNF (conjuctive normal form) clauses.
 
--A is a satisfiable assignment of the variables that result in the formula being TRUE. i.e.: x1 = True, x2 = False, x3 = False*
+-*"A"*, is a satisfiable assignment of the variables that result in the formula being TRUE. i.e.: x1 = True, x2 = False, x3 = False*
 
 Note that the algorithm is guaranteed to find a solution, if it exists, in:
 
