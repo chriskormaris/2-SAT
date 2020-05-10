@@ -1,5 +1,5 @@
 # 2-SAT
-This is an algorithm that given a Boolean formula with n=3 variables overall and 2 variables per clause (2-Satisfiability), determines the values of the variables that result in the formula being TRUE, or determines that there is no solution and the formula is never TRUE. Written in Python.
+This is an algorithm that given a Boolean formula with n=3 distinct variables and 2 variables per clause (2-Satisfiability), determines the values of the variables that result in the formula being TRUE, or determines that there is no solution and the formula is never TRUE. Written in Python.
 
 *Boolean formula example: (x1 + x2') * (x1 + x3) * (x2 + x3') * (x1' + x2') * (x1 + x2)*
 
@@ -9,7 +9,9 @@ This is an algorithm that given a Boolean formula with n=3 variables overall and
 
 Note that the algorithm is guaranteed to find a solution, if it exists, in:
 
-**n_variables<sup>2</sup> * (1 + 4 * sqrt(2 / 3)) = 3<sup>2</sup> * (1 + 4 * sqrt(2 / 3)) ~= 38** iterations.
+**n<sup>2</sup> * (1 + 4 * sqrt(2 / 3)) = 3<sup>2</sup> * (1 + 4 * sqrt(2 / 3)) ~= 38** iterations.
+
+where **n** is the number of distinct variables
 
 
 **See *Introduction to Probability Models, 10th Edition, Sheldon Ross* book, page 241**
