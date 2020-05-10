@@ -9,7 +9,7 @@ This is an algorithm that given a Boolean formula with n=3 distinct variables an
 
 Note that the algorithm is guaranteed to find a solution, if it exists, in:
 
-**n<sup>2</sup> * (1 + 4 * sqrt(2 / 3)) = 3<sup>2</sup> * (1 + 4 * sqrt(2 / 3)) ~= 38** iterations.
+**n<sup>2</sup> * (1 + 4 * (n<sup>2</sup> * sqrt(2 / 3))) = 3<sup>2</sup> * (1 + 4 * 3<sup>2</sup> sqrt(2 / 3)) ~= 30** iterations.
 
 where **n** is the number of distinct variables
 
