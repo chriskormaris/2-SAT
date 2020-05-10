@@ -76,7 +76,7 @@ while not_true_clause_found and stages <= int(math.ceil(max_stages)):
                 print('setting variable ' + str(variable_chosen) + ' to False!')
                 variable_assignment[variable_chosen] = False
 
-            # break  # Skip the rest of this stage and go to the next stage. NOT VERY EFFICIENT!
+        # break  # Skip the rest of this stage and go to the next stage. FOR DEBUGGING ONLY!
 
     diffkeys = [i for i in A if A[i] != variable_assignment[i]]
     Y.append(len(diffkeys))
