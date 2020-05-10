@@ -1,9 +1,10 @@
 # 2-SAT
-An algorithm that given a set of CNF (conjuctive normal form) clauses using n=3 variables with 2 variables per clause (2-Satisfiability), outputs a solution (if it exists), which is an assignment for the truth variables that satisfies all the given CNF clauses. Written in Python.
+This is an algorithm that given a Boolean formula with n=3 variables overall and 2 variables per clause (2-Satisfiability), determines the values of the variables that result in the formula being TRUE, or determines that there is no solution and the formula is never TRUE. Written in Python.
 
-*CNF clause example: (x1 + x2') * (x1 + x3) * (x2 + x3') * (x1' + x2') * (x1 + x2)*
+*Boolean formula example: (x1 + x2') * (x1 + x3) * (x2 + x3') * (x1' + x2') * (x1 + x2)*
 
-*A: a set of satisfiable assignment of truth variables for the given CNF clause: x1 = True, x2 = False, x3 = False*
+*A Boolean formula is a combination of CNF (conjuctive normal form) clauses. 
+*A is a satisfiable assignment of the variables that result in the formula being TRUE. i.e.: x1 = True, x2 = False, x3 = False*
 
 Note that the algorithm is guaranteed to find a solution, if it exists, in:
 
