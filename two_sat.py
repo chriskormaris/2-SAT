@@ -3,11 +3,10 @@
 import math
 import random
 
-# Inputs: a set of CNF (conjuctive normal form) clauses using n=3 variables with 2 variables per clause
-# Outputs: a solution (if it exists), which is an assignemnt for the truth variables that satisfies all the given CNF clauses
+# Inputs: a Boolean formula with n=3 distinct variables and 2 variables per clause
+# Outputs: a solution (if it exists), which is a satisfiable assignment of the variables that result in the formula being TRUE
 
-n_variables = 3  # 3 Boolean variables: x1, x2, x3
-k_clauses = 5  # 5 clauses
+n = 3  # n=3 Boolean variables: x1, x2, x3
 num_variables_per_clause = 2  # 2: hence the name 2-sat
 
 # _: denotes not
@@ -25,32 +24,35 @@ set_of_clauses = [
     ['x1', 'x2']
 ]
 
+k = len(set_of_clauses)  # k=5 clauses
+
 print('CNF clauses: ')
 print(set_of_clauses)
 print('')
 
 variable_assignment = {'x1': False, 'x2': False, 'x3': False}
-y_train = []  # y_train: how much different is A and variable_assignment
+Y = []  # Y: how much different "A" is from "variable_assignment"
 
 print('initial variable assignment of truth variables: ' + str(variable_assignment))
 print('a satisfiable assignment of truth variables A: ' + str(A))
-print('y_train: ' + str(y_train))
+print('Y: ' + str(Y))
 print('')
 
 diffkeys = None
 not_true_clause_found = True
 stages = 0
-max_stages = (n_variables ^ 2) * (1 + 4 * math.sqrt(2/3))
-while not_true_clause_found and stages <= int(max_stages):
+max_stages = (n ^ 2) * (1 + 4 * math.sqrt(2/3))
+while not_true_clause_found and stages <= int(math.ceil(max_stages)):
 
     not_true_clause_found = False
 
-    for j in range(len(set_of_clauses)):
+    for j in range(k):
         clause = set_of_clauses[j]
 
         # check if clause is true
         true_found = False
         for i in range(len(clause)):
+        # for i in range(num_variables_per_clause):
             value = variables_dict[clause[i]]
             if value == variable_assignment[clause[i].replace('_', '')]:
                 true_found = True
@@ -76,11 +78,11 @@ while not_true_clause_found and stages <= int(max_stages):
 
             # break  # Skip the rest of this stage and go to the next stage. NOT VERY EFFICIENT!
 
-    diffkeys = [k for k in A if A[k] != variable_assignment[k]]
-    y_train.append(len(diffkeys))
+    diffkeys = [i for i in A if A[i] != variable_assignment[i]]
+    Y.append(len(diffkeys))
 
     print('current variable assignment of truth variables: ' + str(variable_assignment))
-    print('y_train: ' + str(y_train))
+    print('Y: ' + str(Y))
 
     stages += 1
     print('**********\n')
@@ -90,7 +92,7 @@ print('stages done: ' + str(stages))
 print('max stages = ceil[(n ^ 2) * (1 + 4 * sqrt(2/3))] = ' + ' ceil[' + str(max_stages) + ']' + ' = ' + str(math.ceil(max_stages)))
 print('final variable assignment of truth variables: ' + str(variable_assignment))
 print('a satisfiable assignment of truth variables A: ' + str(A))
-print('y_train: ' + str(y_train))
+print('Y: ' + str(Y))
 
 if len(diffkeys) == 0:
     print('The algorithm has successfully found a solution for the 2-SAT problem!!!')
