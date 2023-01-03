@@ -37,7 +37,7 @@ print('a satisfiable assignment of truth variables A: ' + str(A))
 print('Y: ' + str(Y))
 print('')
 
-diffkeys = None
+diff_keys = []
 not_true_clause_found = True
 stages = 0
 max_stages = math.pow(n, 2) * (1 + 4 * math.sqrt(float(2) / 3))
@@ -75,11 +75,12 @@ while not_true_clause_found and stages <= int(math.ceil(max_stages)):
                 print('setting variable ' + str(variable_chosen) + ' to False!')
                 variable_assignment[variable_chosen] = False
 
-            # Skip the rest of this stage and go to the next stage. FOR DEBUGGING ONLY!
+            # Skip the rest of this stage and go to the next stage.
+            # FOR DEBUGGING ONLY!
             # break
 
-    diffkeys = [i for i in A if A[i] != variable_assignment[i]]
-    Y.append(len(diffkeys))
+    diff_keys = [i for i in A if A[i] != variable_assignment[i]]
+    Y.append(len(diff_keys))
 
     print('current variable assignment of truth variables: ' + str(variable_assignment))
     print('Y: ' + str(Y))
@@ -94,7 +95,7 @@ print('final variable assignment of truth variables: ' + str(variable_assignment
 print('a satisfiable assignment of truth variables A: ' + str(A))
 print('Y: ' + str(Y))
 
-if len(diffkeys) == 0:
+if len(diff_keys) == 0:
     print('The algorithm has successfully found a solution for the 2-SAT problem!!!')
 else:
     print('The algorithm did NOT find a solution for the 2-SAT problem.')
