@@ -4,18 +4,17 @@ import math
 import random
 
 # Inputs: a Boolean formula with n=3 distinct variables and 2 variables per clause
-# Outputs: a solution (if it exists), which is a satisfiable assignment of the variables that result in the formula being TRUE
+# Outputs: a solution (if it exists),
+# which is a satisfiable assignment of the variables that result in the formula being TRUE
 
 n = 3  # n=3 Boolean variables: x1, x2, x3
 num_variables_per_clause = 2  # 2: hence the name 2-sat
-
-# _: denotes not
-variables_dict = {'x1': True, '_x1': False, 'x2': True, '_x2': False, 'x3': True, '_x3': False}
 
 # A, a set of satisfiable assignment of truth variables: x1 = True, x2 = False, x3 = False
 A = {'x1': True, 'x2': False, 'x3': False}
 
 # CNF clause example: (x1 + x2') * (x1 + x3) * (x2 + x3') * (x1' + x2') * (x1 + x2)
+# _: denotes not
 set_of_clauses = [
     ['x1', '_x2'],
     ['x1', 'x3'],
@@ -53,7 +52,7 @@ while not_true_clause_found and stages <= int(math.ceil(max_stages)):
         true_found = False
         for i in range(len(clause)):
         # for i in range(num_variables_per_clause):
-            value = variables_dict[clause[i]]
+            value = False if '_' in clause[i] else True
             if value == variable_assignment[clause[i].replace('_', '')]:
                 true_found = True
 
@@ -76,7 +75,8 @@ while not_true_clause_found and stages <= int(math.ceil(max_stages)):
                 print('setting variable ' + str(variable_chosen) + ' to False!')
                 variable_assignment[variable_chosen] = False
 
-        # break  # Skip the rest of this stage and go to the next stage. FOR DEBUGGING ONLY!
+            # Skip the rest of this stage and go to the next stage. FOR DEBUGGING ONLY!
+            # break
 
     diffkeys = [i for i in A if A[i] != variable_assignment[i]]
     Y.append(len(diffkeys))
